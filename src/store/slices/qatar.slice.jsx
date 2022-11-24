@@ -78,7 +78,7 @@ let initialState = {
                 {nombre:'Portugal',code:'POR',bandera:'portugal'},
                 {nombre:'Ghana',code:'GHA',bandera:'ghana'},
                 {nombre:'Uruguay',code:'URU',bandera:'uruguay'},
-                {nombre:'Corea',code:'COR',bandera:'corea'},
+                {nombre:'Corea',code:'KOR',bandera:'corea'},
             ]
         },
     ],
