@@ -85,6 +85,17 @@ h1{
   border: solid 1px #000;
 }
 .score{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 10px;
   margin-right: 10px;
+}
+.inputScore{
+  width: 20px;
+  font-size: 20px;
+}
+.horaInicio{
+  font-size: 11px;
+  color: blue;
 }

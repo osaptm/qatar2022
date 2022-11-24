@@ -17,7 +17,10 @@ const GruposList = () => {
             })
            return bandera;
         }
-
+        const fechaText = (date) =>{
+            let fecha = new Date(date);
+            return fecha.toLocaleString();
+        }
         let paises = grupo.paises.map((pais)=>{
             codePaises.push(pais.code);
             return (<div key={pais.nombre} className='pais'><img src={banderas[pais.bandera]} className="bandera"/>{pais.nombre}</div>)
@@ -30,11 +33,15 @@ const GruposList = () => {
                         <div className='dataPartido'>
                             {/* <span>{partido.home_team.name}</span> */}
                             <img src={banderas[traeBandera(partido.home_team_country)]} className="banderaPartido"/>
-                            <p className='score'>0-0</p>                                                 
+                            <div className='score'>
+                                <input className='inputScore' type="number" placeholder='0'/>
+                                {'-'}
+                                <input className='inputScore' type="number" placeholder='0'/>
+                            </div>                                                 
                             <img src={banderas[traeBandera(partido.away_team_country)]} className="banderaPartido"/>
                             {/* <span>{partido.away_team.name}</span>  */}
                         </div>                       
-                        <div className='horaInicio'>{partido.datetime}</div>
+                        <div className='horaInicio'>{fechaText(partido.datetime)}</div>
                         <hr/>
                     </div>
                 )
