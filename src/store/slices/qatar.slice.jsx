@@ -5,80 +5,80 @@ let initialState = {
             id:1,
             nombre:'Grupo A',
             paises:[
-                {nombre:'Catar',bandera:'qatar'},
-                {nombre:'Ecuador',bandera:'ecuador'},
-                {nombre:'Senegal',bandera:'senegal'},
-                {nombre:'Holanda',bandera:'holanda'},
+                {nombre:'Catar',code:'QAT',bandera:'qatar'},
+                {nombre:'Ecuador',code:'ECU',bandera:'ecuador'},
+                {nombre:'Senegal',code:'SEN',bandera:'senegal'},
+                {nombre:'Holanda',code:'NED',bandera:'holanda'},
             ]
         },
         {
             id:2,
             nombre:'Grupo B',
             paises:[
-                {nombre:'Inglaterra',bandera:'inglaterra'},
-                {nombre:'Iran',bandera:'iran'},
-                {nombre:'USA',bandera:'eeuu'},
-                {nombre:'Gales',bandera:'gales'},
+                {nombre:'Inglaterra',code:'ENG',bandera:'inglaterra'},
+                {nombre:'Iran',code:'IRN',bandera:'iran'},
+                {nombre:'USA',code:'USA',bandera:'eeuu'},
+                {nombre:'Gales',code:'WAL',bandera:'gales'},
             ]
         },
         {
             id:3,
             nombre:'Grupo C',
             paises:[
-                {nombre:'Argentina',bandera:'argentina'},
-                {nombre:'Arabia Saudita',bandera:'arabia'},
-                {nombre:'Mexico',bandera:'mexico'},
-                {nombre:'Polonia',bandera:'polonia'},
+                {nombre:'Argentina',code:'ARG',bandera:'argentina'},
+                {nombre:'Arabia Saudita',code:'KSA',bandera:'arabia'},
+                {nombre:'Mexico',code:'MEX',bandera:'mexico'},
+                {nombre:'Polonia',code:'POL',bandera:'polonia'},
             ]
         },
         {
             id:4,
             nombre:'Grupo D',
             paises:[
-                {nombre:'Francia',bandera:'francia'},
-                {nombre:'Australia',bandera:'australia'},
-                {nombre:'Dinamarca',bandera:'dinamarca'},
-                {nombre:'Tunez',bandera:'tunez'},
+                {nombre:'Francia',code:'FRA',bandera:'francia'},
+                {nombre:'Australia',code:'AUS',bandera:'australia'},
+                {nombre:'Dinamarca',code:'DEN',bandera:'dinamarca'},
+                {nombre:'Tunez',code:'TUN',bandera:'tunez'},
             ]
         },
         {
             id:5,
             nombre:'Grupo E',
             paises:[
-                {nombre:'España',bandera:'spain'},
-                {nombre:'Costa Rica',bandera:'costarica'},
-                {nombre:'Alemania',bandera:'alemania'},
-                {nombre:'Japon',bandera:'japon'},
+                {nombre:'España',code:'ESP',bandera:'spain'},
+                {nombre:'Costa Rica',code:'CRC',bandera:'costarica'},
+                {nombre:'Alemania',code:'GER',bandera:'alemania'},
+                {nombre:'Japon',code:'JPN',bandera:'japon'},
             ]
         },
         {
             id:6,
             nombre:'Grupo F',
             paises:[
-                {nombre:'Belgica',bandera:'belgica'},
-                {nombre:'Canada',bandera:'canada'},
-                {nombre:'Marruecos',bandera:'marruecos'},
-                {nombre:'Croacia',bandera:'croacia'},
+                {nombre:'Belgica',code:'BEL',bandera:'belgica'},
+                {nombre:'Canada',code:'CAN',bandera:'canada'},
+                {nombre:'Marruecos',code:'MAR',bandera:'marruecos'},
+                {nombre:'Croacia',code:'CRO',bandera:'croacia'},
             ]
         },
         {
             id:7,
             nombre:'Grupo G',
             paises:[
-                {nombre:'Brazil',bandera:'brasil'},
-                {nombre:'Serbia',bandera:'serbia'},
-                {nombre:'Suiza',bandera:'suiza'},
-                {nombre:'Camerun',bandera:'camerun'},
+                {nombre:'Brazil',code:'BRA',bandera:'brasil'},
+                {nombre:'Serbia',code:'SRB',bandera:'serbia'},
+                {nombre:'Suiza',code:'SUI',bandera:'suiza'},
+                {nombre:'Camerun',code:'CMR',bandera:'camerun'},
             ]
         },
         {
             id:8,
             nombre:'Grupo H',
             paises:[
-                {nombre:'Portugal',bandera:'portugal'},
-                {nombre:'Ghana',bandera:'ghana'},
-                {nombre:'Uruguay',bandera:'uruguay'},
-                {nombre:'Corea',bandera:'corea'},
+                {nombre:'Portugal',code:'POR',bandera:'portugal'},
+                {nombre:'Ghana',code:'GHA',bandera:'ghana'},
+                {nombre:'Uruguay',code:'URU',bandera:'uruguay'},
+                {nombre:'Corea',code:'COR',bandera:'corea'},
             ]
         },
     ],
