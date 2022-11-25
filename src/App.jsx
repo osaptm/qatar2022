@@ -1,17 +1,20 @@
 import GruposList from './components/GruposList'
+import Today from './components/Today'
+import { HashRouter, Routes, Route, Link } from "react-router-dom";
+
 function App() {
   return (
-    <>
+    <HashRouter>
       <div className='botonera'>
-        <button className='myButton' onClick={()=>{alert('En Creacion -> No seas SAPO')}}>GRUPOS</button>
-        <button className='myButton' onClick={()=>{alert('En Creacion -> No seas SAPO')}}>OCTAVOS</button>
-        <button className='myButton' onClick={()=>{alert('En Creacion -> No seas SAPO')}}>CUARTOS</button>
-        <button className='myButton' onClick={()=>{alert('En Creacion -> No seas SAPO')}}>SEMIS - FINAL</button>
+        <Link className='myButton' to={'./'}>GRUPOS</Link>
+        <Link className='myButton' to={'./today'}>PARTIDOS DE HOY</Link>
       </div>
-      <div className="container">
-          <GruposList />
-      </div>
-    </>
-  )
+      <Routes>
+        <Route path="/" element={<GruposList />} />
+        <Route path="/today" element={<Today />} />
+      </Routes>
+    </HashRouter>
+  );
 }
-export default App
+
+export default App;

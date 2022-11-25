@@ -1,12 +1,19 @@
 import { useSelector } from 'react-redux'
 import {banderas} from '../assets/banderas/banderas'
-//import fixture from '../json/fixture.json'
 import { useEffect,useState } from 'react';
 
-const GruposList = () => {
+const Today = () => {
     const gruposDefault = useSelector((state)=>state.qatar.grupos);
     const grupos = JSON.parse( localStorage.getItem('grupos') || localStorage.setItem('grupos', JSON.stringify(gruposDefault)) );
     const [fixture, setfixture] = useState([]);
+
+    const tienePartidos = (grupo) =>{
+        const codePaises=[];
+        grupo.paises.forEach((pais)=>{codePaises.push(pais.code);})   
+        return fixture.every((partido)=>{
+            return (partido.stage_name === 'First stage' && codePaises.includes(partido.home_team_country))
+        })
+    }
     const PaisesMasPartidos = ({grupo}) =>{
         const codePaises=[];
         const traeBandera = (code) => {
@@ -51,24 +58,21 @@ const GruposList = () => {
         })
         return(
             <>
-                <div className='paisesGrupo'>
-                    {paises}
-                </div>
-                <hr />
-                <details open="">
-                    <summary>CLICK AQUI PARA DETALLES!!!</summary>
-                    <nav className='ecuentros-grupo'>
-                        <div className='encuentro'>
-                            {partidos}
-                        </div>
-                    </nav>
-                </details>
+                
+                <nav className='ecuentros-grupo'>
+                    <div className='encuentro'>
+                        {partidos}
+                    </div>
+                </nav>
+        
             </>
         )     
     }   
 
+    
+
     const getFixture = async() => {
-        const data = await fetch('https://worldcupjson.net/matches');
+        const data = await fetch('https://worldcupjson.net/matches/today');
         const json = await data.json();
         setfixture(json);
     }
@@ -78,13 +82,17 @@ const GruposList = () => {
     }, []);
 
     return grupos.map((grupo)=>{
-        return (
-            <div key={grupo.id} className='grupo'>
-                <h1>{grupo.nombre}</h1>
-                <PaisesMasPartidos grupo={grupo}/>
-            </div>
-        )
+        
+            return (
+                <div key={grupo.id} className='grupo'>
+                    <h1 className='h1today'>{grupo.nombre}</h1>
+                    <PaisesMasPartidos grupo={grupo}/>
+                </div>
+            )
+
+      
+        
     })
 };
 
-export default GruposList;
+export default Today;
