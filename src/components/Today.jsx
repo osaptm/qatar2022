@@ -7,7 +7,7 @@ const Today = () => {
     const grupos = JSON.parse( localStorage.getItem('grupos') || localStorage.setItem('grupos', JSON.stringify(gruposDefault)) );
     const [fixture, setfixture] = useState([]);
 
-    const tienePartidos = (grupo) =>{
+    const tienePartidos =  (grupo) =>{
         const codePaises=[];
         grupo.paises.forEach((pais)=>{codePaises.push(pais.code);})   
         return fixture.every((partido)=>{
@@ -39,8 +39,8 @@ const Today = () => {
             if(partido.stage_name === 'First stage' && codePaises.includes(partido.home_team_country)){
                 return (
                     <div key={partido.id} className='partido'>
-                        <div className='dataPartido'>
-                            {/* <span>{partido.home_team.name}</span> */}
+                        <span className='nameTeam'>{ partido.home_team.name+' vs '+partido.away_team.name}</span>
+                        <div className='dataPartido'>                            
                             <img src={banderas[traeBandera(partido.home_team_country)]} className="banderaPartido"/>
                             <div className='score'>
                                 <input className='inputScore' type="number" placeholder='0' defaultValue={partido.home_team.goals} readOnly/>
@@ -48,8 +48,8 @@ const Today = () => {
                                 <input className='inputScore' type="number" placeholder='0' defaultValue={partido.away_team.goals} readOnly/>
                             </div>                                                 
                             <img src={banderas[traeBandera(partido.away_team_country)]} className="banderaPartido"/>
-                            {/* <span>{partido.away_team.name}</span>  */}
-                        </div>                       
+                        </div>
+                        <div className='estadoPartido'>{partido.status.toUpperCase()}</div>                       
                         <div className='horaInicio'>{fechaText(partido.datetime)}</div>
                         <hr/>
                     </div>
@@ -82,16 +82,15 @@ const Today = () => {
     }, []);
 
     return grupos.map((grupo)=>{
-        
+        // console.log(tienePartidos(grupo));
+        // if(tienePartidos(grupo) ){
             return (
                 <div key={grupo.id} className='grupo'>
                     <h1 className='h1today'>{grupo.nombre}</h1>
                     <PaisesMasPartidos grupo={grupo}/>
                 </div>
             )
-
-      
-        
+        //} 
     })
 };
 
